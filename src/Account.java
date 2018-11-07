@@ -26,35 +26,35 @@ public final class Account {
     public static void main(final String[] args)
             throws Exception {
 
-        Map<String, String> map = new HashMap<String, String>();
-
+        Map<String, String> user = new HashMap<String, String>();
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Пожалуйста, введите "
-                + "количество пользователей:\r");
-        int n = input.nextInt();
-        System.out.println("Количество "
-                + "пользователей: " + n);
+            System.out.println("Пожалуйста, введите "
+                    + "количество пользователей:\r");
+            // n = input.nextInt();
+            int n = Integer.parseInt(input.nextLine());
+            System.out.println("Количество "
+                    + "пользователей: " + n);
 
-        for (int i = 1; i <= n; i++) {
+            for (int i = 1; i <= n; i++) {
 
-            System.out.println("Введите login "
-                    + "для пользователя №" + i + ":\r");
-            String login = input.nextLine();
+                System.out.println("Введите login "
+                        + "для пользователя №" + i + ":\r");
+                String login = input.nextLine();
 
-            System.out.println("Введите password "
-                    + "для пользователя №" + i + ":\r");
-            String password = input.nextLine();
+                System.out.println("Введите password "
+                        + "для пользователя №" + i + ":\r");
+                String password = input.nextLine();
 
-            map.put(login, password);
-        }
+                user.put(login, password);
+            }
 
         //System.out.println(map);
 
         System.out.println("Введите login:\r");
         String login = input.nextLine();
 
-        for (Map.Entry<String, String> entry : map.entrySet()) {
+        for (Map.Entry<String, String> entry : user.entrySet()) {
             if (login.equals(entry.getKey())) {
                 System.out.println("Пароль: " + entry.getValue());
             }
